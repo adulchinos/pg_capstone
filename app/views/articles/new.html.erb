@@ -1,0 +1,10 @@
+<%= form_tag '/articles' do %>
+
+	<%= label_tag :title %>
+	<%= text_field_tag :title, @article.title %>
+
+	<%= label_tag :content %>
+	<%= text_field_tag :content, @article.content %>
+
+	<%= submit_tag "P U B L I S H" %>
+	<% end %>

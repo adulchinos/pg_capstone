@@ -1,0 +1,7 @@
+<h1>W E L C O M E * P A G E</h1> 
+
+<% @articles.each do |article| %>
+	<a href='/articles/<%= article.id %>'><h3><%= article.title %></h3></a>
+<% end %>
+
+<a href='/articles/new'>Post a new article</a>
