@@ -1,3 +1,314 @@
-<h1><%= @article.title %></h1>
+<!-- <h1><%= @article.title %></h1>
 
-<p><%= @article.content %></p>
+<p><%= simple_format(@article.content) %></p>
+
+
+<% if user_signed_in? && current_user.id == @article.user_id%>
+
+<a href='/articles/<%= @article.id %>/edit'>E D I T</a>
+
+<% end %> -->
+
+
+
+
+		<div id="main" class="container">
+
+		
+			</div>
+
+			<div id="content" class="content section row">
+
+				<div class="col-md-8 bg-base col-lg-8 col-xl-9">
+
+					<div class="ribbon ribbon-highlight">
+						<ol class="breadcrumb ribbon-inner">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Social Media</a></li>
+							<li class="active" title="Postman will send notifications to your flashy smartphone about popular people and their latest shouts">Postman will send notifications ...</li>
+						</ol>
+					</div>
+					
+					<header class="page-header">
+						
+					
+
+						<h2 class="page-title">
+							<%= @article.title %>
+						</h2>
+
+					</header>
+
+					<article class="entry style-single type-post">
+						
+
+						<div class="entry-meta indented">
+							<span class="author">by <a href="blog.html">John Doe</a></span>
+							<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
+							<span class="category">In <a href="blog.html">Social Media</a></span>
+						</div>
+
+						<div class="entry-content indented">
+
+							
+							<p>
+								<%= simple_format(@article.content) %>
+							</p>
+
+						
+							<p>
+								At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+							</p>
+
+							<!-- 
+							sample for adding full image
+							<figure class="image image-full">
+
+								<img src="../img/placeholder.gif" data-src="http://placehold.it/680x452" data-src-retina="http://placehold.it/1024x680" width="680" height="452" alt="">
+
+								<noscript>
+									<img src="http://placehold.it/680x452" alt="">
+								</noscript>
+
+							</figure> -->
+										<div class="col-xs-3 col-sm-2">
+										<a href="http://placehold.it/460x460" title="Image 10" class="thumbnail" data-rel="prettyPhoto[gallery]">
+
+											<!-- to disable lazy loading, remove data-src and data-src-retina -->
+											<img src="../img/placeholder.gif" data-src="http://placehold.it/80x80" data-src-retina="http://placehold.it/160x160" width="80" height="80" alt="">
+
+											<!--fallback for no javascript browsers-->
+											<noscript>
+												<img src="http://placehold.it/80x80" alt="">
+											</noscript>
+
+										</a>
+										<h5>figure</h5>
+									</div><!--/.col-xs-2.col-sm-2-->
+
+							<!--/.gallery-->
+
+							
+							<p>
+								At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+							</p>
+
+						
+
+
+						</div>
+
+					</article>
+
+					<div class="after-entry indented">
+
+						<hr>
+
+
+						<aside class="widget post-tags">
+							<i class="icon-tags"></i> Tags:
+							<a href="#"> Some</a>
+						</aside> 
+
+						<hr>
+
+
+						<aside class="widget">
+							Share:
+							<a href="#" class="" onclick="window.open(
+								'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+								'facebook-share-dialog', 
+								'width=626,height=436'); 
+								return false;"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-facebook icon-dark"></i></span></a>
+							<a href="#" class="" onclick="window.open(
+								'http://twitter.com/home?status='+encodeURIComponent(location.href), 
+								'facebook-share-dialog', 
+								'width=626,height=436'); 
+								return false;"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-twitter icon-dark"></i></span></a>
+							<a href="#" class="" onclick="window.open(
+								'https://plus.google.com/share?url='+encodeURIComponent(location.href), 
+								'facebook-share-dialog', 
+								'width=500,height=436'); 
+								return false;"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-google-plus icon-dark"></i></span></a>
+							<a href="#" class="" onclick="javascript:void((function(){var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-pinterest icon-dark"></i></span></a>
+						</aside> 
+
+					</div>
+					
+					<div id="comments" class="comments-area indented">
+
+						<h4 class="comments-title">Comments</h4>
+
+						<ol class="media-list comment-list">
+							<li class="media comment">
+
+								<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
+
+								<div class="media-body">
+
+									<h4 class="media-heading author-vcard">
+										<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
+										<span class="comment-meta commentmetadata">on <a href="#">July 8, 2013 at 7:46 am</a></span>
+									</h4>
+									<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+								</div>
+							</li>
+						
+					
+						</ol>
+
+						<div id="respond" class="comments-respond">
+
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
+
+							<form action="#" class="form-inline row" method="post" id="commentform">
+
+							
+								<div class="form-group col-lg-12 col-md-12 col-sm-12">
+									<label class="sr-only" for="inputMessage">Message</label>
+									<textarea class="form-control" id="inputMessage" name="message" rows="8" aria-required="true" placeholder="Your Message"></textarea>
+								</div>
+
+								<div class="form-group col-lg-12 col-md-12 col-sm-12">
+									<button class="btn btn-primary" name="submit" id="submit">Send Message</button>
+								</div>
+
+							</form>
+
+						</div><!-- #respond -->
+
+					</div><!--/#comments-->
+
+				</div><!--/.col-md-8.col-lg-8.col-xl-9-->
+
+				<div class="sidebar col-md-4 col-lg-4 col-xl-3">
+
+					<aside class="widget">
+
+						<h2 class="widget-title ribbon"><span>New Posts from users and journals the user follows</span></h2>
+
+						<div class="entries row">
+
+							<article class="type-post style-media-list media col-sm-6 col-md-12">
+
+								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+								<img src="../img/placeholder.gif" data-src="http://placehold.it/80x80" data-src-retina="http://placehold.it/160x160" width="80" height="80" class="media-object pull-left" alt="">
+
+								<!--fallback for no javascript browsers-->
+								<noscript>
+									<img src="http://placehold.it/80x80" alt="">
+								</noscript>
+
+								<div class="media-body">
+									<h3  class="entry-title">
+										<a href="single.html" rel="bookmark">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</a>
+									</h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
+										<span class="category">In <a href="blog.html">Technology</a></span>
+									</div>
+								</div>
+
+							</article>
+
+							<article class="type-post style-media-list media col-sm-6 col-md-12">
+
+								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+								<img src="../img/placeholder.gif" data-src="http://placehold.it/80x80" data-src-retina="http://placehold.it/160x160" width="80" height="80" class="media-object pull-left" alt="">
+
+								<!--fallback for no javascript browsers-->
+								<noscript>
+									<img src="http://placehold.it/80x80" alt="">
+								</noscript>
+
+								<div class="media-body">
+									<h3  class="entry-title">
+										<a href="single.html" rel="bookmark">Duis aute irure dolor in reprehenderit in voluptate velit esse.</a>
+									</h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
+										<span class="category">In <a href="blog.html">Technology</a></span>
+									</div>
+								</div>
+
+							</article>
+
+							<article class="type-post style-media-list media col-sm-6 col-md-12">
+
+								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+								<img src="../img/placeholder.gif" data-src="http://placehold.it/80x80" data-src-retina="http://placehold.it/160x160" width="80" height="80" class="media-object pull-left" alt="">
+
+								<!--fallback for no javascript browsers-->
+								<noscript>
+									<img src="http://placehold.it/80x80" alt="">
+								</noscript>
+
+								<div class="media-body">
+									<h3  class="entry-title">
+										<a href="single.html" rel="bookmark">Excepteur sint occaecat cupidatat non proident.</a>
+									</h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
+										<span class="category">In <a href="blog.html">Technology</a></span>
+									</div>
+								</div>
+
+							</article>
+
+							<article class="type-post style-media-list media col-sm-6 col-md-12">
+
+								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+								<img src="../img/placeholder.gif" data-src="http://placehold.it/80x80" data-src-retina="http://placehold.it/160x160" width="80" height="80" class="media-object pull-left" alt="">
+
+								<!--fallback for no javascript browsers-->
+								<noscript>
+									<img src="http://placehold.it/80x80" alt="">
+								</noscript>
+
+								<div class="media-body">
+									<h3  class="entry-title">
+										<a href="single.html" rel="bookmark">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</a>
+									</h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
+										<span class="category">In <a href="blog.html">Technology</a></span>
+									</div>
+								</div>
+
+							</article>
+
+							<article class="type-post style-media-list media col-sm-6 col-md-12">
+
+								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+								<img src="../img/placeholder.gif" data-src="http://placehold.it/80x80" data-src-retina="http://placehold.it/160x160" width="80" height="80" class="media-object pull-left" alt="">
+
+								<!--fallback for no javascript browsers-->
+								<noscript>
+									<img src="http://placehold.it/80x80" alt="">
+								</noscript>
+
+								<div class="media-body">
+									<h3  class="entry-title">
+										<a href="single.html" rel="bookmark">Duis aute irure dolor in reprehenderit in voluptate velit esse.</a>
+									</h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
+										<span class="category">In <a href="blog.html">Technology</a></span>
+									</div>
+								</div>
+
+							</article>
+
+						</div>
+
+					</aside><!--/.widget-->
+
+					
+				</div><!--/.sidebar col-md-4 col-lg-4 col-xl-3-->
+
+			</div><!--/#content-->
+			
+		</div><!--#main.container-->
+
+		

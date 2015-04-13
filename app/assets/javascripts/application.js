@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap
+//= require Summarize/main
+//= require Summarize/jquery.prettyPhoto
+//= require Summarize/jquery.unveil.min
+//= require Summarize/modernizr-2.6.2-respond-1.1.0.min
 //= require_tree .
