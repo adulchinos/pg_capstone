@@ -74,7 +74,10 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
+		@comments = Comment.where(article_id: params[:id]) 
 	end
+
+	
 
 	def destroy
 		@article = Article.find(params[:id])

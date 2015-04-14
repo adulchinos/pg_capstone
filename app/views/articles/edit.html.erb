@@ -1,19 +1,3 @@
-<%= form_tag "/articles/#{@article.id}", :method => :patch do %>
-
-	<%= label_tag :title %>
-	<%= text_field_tag :title, @article.title %>
-
-	<%= label_tag :content %>
-	<%= text_field_tag :content, @article.content_for_editing%>
-
-	<%= submit_tag "C H A N G E" %>
-	<% end %>
-
-
-
-
-	<a href="/articles/<%= @article.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete article</a>
-
 
 
 
@@ -21,20 +5,22 @@
 
 		<h3 id="reply-title" class="comment-reply-title"><%= @article.title %></h3>
 
-		<div><textarea class="form-control"><%= @article.title %></textarea></div>
 
-		<form action="/articles/#{@article.id}" class="form-inline row" method="patch">
+		<div class="form-group col-lg-12 col-md-12 col-sm-12">
 
+			<!-- <form action="" class="form-inline row" method="patch"> -->
+			<%= form_tag "/articles/#{@article.id}", :method => :patch, :class => "form-inline row" do %>
+
+		 	<div><textarea class="form-control" name="title"><%= @article.title %></textarea></div>  
 		
-			<div class="form-group col-lg-12 col-md-12 col-sm-12">
 				<label class="sr-only" for="inputMessage">Content</label>
-				<textarea class="form-control" id="inputMessage" name="message" rows="8" aria-required="true"><%= @article.content_for_editing %></textarea>
-			</div>
+				<textarea class="form-control" id="inputMessage" name="content" rows="8" aria-required="true"><%= @article.content_for_editing %></textarea>
 
 			<div class="form-group col-lg-12 col-md-12 col-sm-12">
 				<button class="btn btn-primary" name="submit" id="submit">Submit changes</button>
 			</div>
 
-		</form>
+		<% end %>
+		</div>
 
 	</div>
