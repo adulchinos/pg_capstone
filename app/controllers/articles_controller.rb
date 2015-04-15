@@ -76,6 +76,7 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 		@newest = Article.order('created_at DESC').limit(12)
 		@most_cited = Article.most_cited
+		@user = @article.user
 	end
 
 	

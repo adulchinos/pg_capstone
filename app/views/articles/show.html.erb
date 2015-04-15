@@ -20,14 +20,16 @@
 					
 				
 				<% if user_signed_in? && current_user.id == @article.user_id %>
+				<div class="row">
+				<div class="form-group col-lg-4 col-md-4 col-sm-4" >
 					<a href="/articles/<%= @article.id %>/edit"><h2 class="page-title">
 						<%= @article.title %>
 					</h2></a>
-
-					<div class="form-group col-lg-12 col-md-12 col-sm-12">
+				</div>
+					<div class="form-group col-lg-6 col-md-6 col-sm-6" id="edit_button">
 						<a href="/articles/<%= @article.id %>/edit"><button class="btn btn-primary" name="edit" id="submit">Edit</button></a>
 					</div>
-
+				</div>
 				<% else %>
 					<h2 class="page-title">
 						<%= @article.title %>
@@ -42,9 +44,8 @@
 					
 
 					<div class="entry-meta indented">
-						<span class="author">by <a href="blog.html">John Doe</a></span>
-						<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">September 20 2013</time></a></span>
-						<span class="category">In <a href="blog.html">Social Media</a></span>
+						<span class="author">by <%= @user.email %></span>
+						<span class="entry-date">on <time datetime="<%= @article.created_at %>"><%= @article.created_at %></time></span>
 					</div>
 
 					<div class="entry-content indented">
