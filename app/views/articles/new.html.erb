@@ -1,13 +1,24 @@
-<%= form_tag '/articles' do %>
 
-	<%= label_tag :title %>
-	<%= text_field_tag :title, @article.title %>
 
-	<%= label_tag :content %>
-	<%= text_field_tag :content, @article.content %>
 
-	<%= submit_tag "P U B L I S H" %>
-	<% end %>
+	<div id="respond" class="publish-text">
 
-<p>example of how to make a link/citation:</p>
-<p>(link url)[text]</p>
+
+		<div class="form-group col-lg-12 col-md-12 col-sm-12">
+
+			<!-- <form action="" class="form-inline row" method="patch"> -->
+			<%= form_tag "/articles", :method => :post, :class => "form-inline row" do %>
+
+		 	<div><textarea class="form-control" name="title" placeholder="Your title here"></textarea></div>  
+		
+				<label class="sr-only" for="inputMessage">Content</label>
+				<textarea class="form-control" id="inputMessage" name="content" rows="8" aria-required="true" placeholder="Example of how to make a link/citation: (link url)[text]"></textarea>
+
+			<div class="form-group col-lg-12 col-md-12 col-sm-12">
+				<button class="btn btn-primary" name="submit" id="submit">Submit changes</button>
+			</div>
+
+		<% end %>
+		</div>
+
+	</div>
