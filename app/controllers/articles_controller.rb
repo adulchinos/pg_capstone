@@ -74,7 +74,8 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
-		# @comments = Comment.where(article_id: params[:id]) 
+		@newest = Article.order('created_at DESC').limit(12)
+		@most_cited = Article.most_cited
 	end
 
 	
