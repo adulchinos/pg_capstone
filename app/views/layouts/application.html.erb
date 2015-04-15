@@ -21,13 +21,7 @@
 				<div id="brand" class="navbar-brand">
 					<a href="/" rel="bookmark">
 
-						<!-- to disable lazy loading, remove data-src and data-src-retina -->
-						<img src="../img/dark-logo.png" data-src="../img/dark-logo.png" data-src-retina="../img/logo-retina.png" width="244" height="56" alt="">
-
-						<!--fallback for no javascript browsers-->
-						<noscript>
-							<img src="../img/dark-logo.png" alt="">
-						</noscript>
+						<h1>Puust</h1>
 					</a>
 				</div>
 
@@ -200,8 +194,9 @@
 			      <%= message %>
 			    </div>
 			  <% end %>
-
-			<%= yield %>
+			<div ng-app="app">
+				<%= yield %>
+			</div>
 		</div>
 
 <footer id="footer" class="footer-area">

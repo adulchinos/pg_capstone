@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require angular
+//= require app
 //= require Summarize/main
 //= require Summarize/jquery.prettyPhoto
 //= require Summarize/jquery.unveil.min
