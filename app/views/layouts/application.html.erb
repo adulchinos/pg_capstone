@@ -69,7 +69,7 @@
 							<ul class="subnav-entries">
 
 								<% if user_signed_in? %>
-									<li><a href="/users/sign_out" data-method="delete" rel="nofollow">Log out</a></li>
+									<li><a href="/users/sign_out" data-method="delete" rel="nofollow">Log out <%= current_user.user_name %></a></li>
 									<li><a href="/profile">Profile</a></li>
 								<% else %>
 									<li><a href="/users/sign_in">Log in</a></li>

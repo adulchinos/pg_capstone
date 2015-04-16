@@ -15,8 +15,8 @@
 					<header class="entry-header">
 						<h3 class="entry-title"><a href="/articles/<%= @newest[0].id %>"><%= @newest[0].title %></a> </h3>
 						<div class="entry-meta">
-							<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-							<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
+							<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= @newest[0].created_at.to_formatted_s(:long_ordinal) %></time></span>
+							<span class="entry-author"> by <%= @newest[0].user.user_name %></span>
 						</div>
 					</header>
 
@@ -43,8 +43,8 @@
 					<header class="entry-header">
 						<h3 class="entry-title"><a href="/articles/<%= @newest[1].id %>"><%= @newest[1].title %></a> </h3>
 						<div class="entry-meta">
-							<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-							<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
+							<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= @newest[1].created_at.to_formatted_s(:long_ordinal) %></time></span>
+							<span class="entry-author"> by <%= @newest[1].user.user_name %></span>
 						</div>
 					</header>
 					
@@ -71,8 +71,8 @@
 					<header class="entry-header">
 						<h3 class="entry-title"><a href="/articles/<%= @newest[2].id %>"><%= @newest[2].title %></a> </h3>
 						<div class="entry-meta">
-							<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-							<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
+							<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= @newest[2].created_at.to_formatted_s(:long_ordinal) %></time></span>
+							<span class="entry-author"> by <%= @newest[2].user.user_name %></span>
 						</div>
 					</header>
 					
@@ -99,8 +99,8 @@
 					<header class="entry-header">
 						<h3 class="entry-title"><a href="/articles/<%= @newest[3].id %>"><%= @newest[3].title %></a> </h3>
 						<div class="entry-meta">
-							<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-							<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
+							<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= @newest[3].created_at.to_formatted_s(:long_ordinal) %></time></span>
+							<span class="entry-author"> by <%= @newest[3].user.user_name %></span>
 						</div>
 					</header>
 					
@@ -127,8 +127,8 @@
 					<header class="entry-header">
 						<h3 class="entry-title"><a href="/articles/<%= @newest[4].id %>"><%= @newest[4].title %></a> </h3>
 						<div class="entry-meta">
-							<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-							<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
+							<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= @newest[4].created_at.to_formatted_s(:long_ordinal) %></time></span>
+							<span class="entry-author"> by <%= @newest[4].user.user_name %></span>
 						</div>
 					</header>
 					
@@ -167,8 +167,7 @@
 								<a href="/articles/<%= article.id %>" rel="bookmark"><%= article.title %></a>
 							</h3>
 							<div class="entry-meta">
-								<span class="entry-date"><a href=""><time datetime="2013-07-04T23:26:34+00:00">8 hours ago</time></a></span>
-								<span class="entry-category">In <a href="blog.html">Category</a></span>
+								<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= article.created_at.to_formatted_s(:long_ordinal) %></time></span>
 							</div>
 						</header>
 
@@ -210,8 +209,7 @@
 								<a href="/articles/<%= article.id %>" rel="bookmark"><%= article.title %></a>
 							</h3>
 							<div class="entry-meta">
-								<span class="entry-date"><a href=""><time datetime="2013-07-04T23:26:34+00:00">8 hours ago</time></a></span>
-								<span class="entry-category">In <a href="blog.html">Category</a></span>
+								<span class="entry-date"><time datetime="2013-07-04T23:26:34+00:00"><%= article.created_at.to_formatted_s(:long_ordinal) %></time></span>
 							</div>
 						</header>
 

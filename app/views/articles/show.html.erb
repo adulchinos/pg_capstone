@@ -44,8 +44,8 @@
 					
 
 					<div class="entry-meta indented">
-						<span class="author">by <%= @user.email %></span>
-						<span class="entry-date">on <time datetime="<%= @article.created_at %>"><%= @article.created_at %></time></span>
+						<span class="author">by <%= @user.user_name %></span>
+						<span class="entry-date">on <time datetime="<%= @article.created_at %>"><%= @article.created_at.to_formatted_s(:long_ordinal) %></time></span>
 					</div>
 
 					<div class="entry-content indented">
@@ -156,7 +156,6 @@
 					<% @most_cited.each do |article| %>
 
 							<article class="type-post style-media-list media col-sm-6 col-md-12">
-
 
 								<div class="media-body">
 									<h3  class="entry-title">
