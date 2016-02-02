@@ -4,7 +4,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-gem 'mysql2'
+#gem 'mysql2'
+gem 'pg'
 # Use SCSS for stylesheets
 
 # Use Uglifier as compressor for JavaScript assets

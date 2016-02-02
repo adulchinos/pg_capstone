@@ -13,41 +13,44 @@
 
 ActiveRecord::Schema.define(version: 20150415222230) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
-    t.string   "title",               limit: 255
-    t.text     "content",             limit: 65535
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",             limit: 4
-    t.text     "content_for_editing", limit: 65535
+    t.integer  "user_id"
+    t.text     "content_for_editing"
   end
 
   create_table "citations", force: :cascade do |t|
-    t.integer  "article_citing", limit: 4
-    t.integer  "article_cited",  limit: 4
+    t.integer  "article_citing"
+    t.integer  "article_cited"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.integer  "article_id", limit: 4
-    t.text     "comment",    limit: 65535
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "installs", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,19 +59,19 @@ ActiveRecord::Schema.define(version: 20150415222230) do
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_name",              limit: 255
+    t.string   "user_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
