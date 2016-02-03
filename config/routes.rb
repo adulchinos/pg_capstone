@@ -16,4 +16,6 @@ Rails.application.routes.draw do
    patch '/articles/:id' => 'articles#update'
    delete '/articles/:id' => 'articles#destroy'
    get '/profile' => 'users#show'
+
+   get '/informations/:id' => 'informations#show'
 end
