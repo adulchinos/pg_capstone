@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160202183845) do
     t.integer  "article_cited"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link_url"
   end
 
   create_table "comments", force: :cascade do |t|

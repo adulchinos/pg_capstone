@@ -64,7 +64,8 @@ class ArticlesController < ApplicationController
 						id = /\/.\d?\)/.match(link)
 						id = id.to_s
 						id = id.gsub("/", "").gsub(")", "").to_i
-						Citation.create({:article_cited => id, :article_citing => @article.id})
+						link_url = link.gsub("(", "").gsub(")", "")
+						Citation.create({:article_cited => id, :article_citing => @article.id, :link_url => link_url})
 					end
 				end
 
